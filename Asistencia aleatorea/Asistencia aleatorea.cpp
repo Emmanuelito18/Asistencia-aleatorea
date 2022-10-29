@@ -236,4 +236,3 @@ Programación ATS o en cualquier video de internet, o páginas de documentación
 programación en C++
 */
 ///////////////////////////////
-#define prueba _prueba
