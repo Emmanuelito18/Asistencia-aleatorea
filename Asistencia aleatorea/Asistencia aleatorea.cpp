@@ -25,6 +25,10 @@ using namespace std;
 /////////////////////////////////////
 //prototipado de funciones
 
+//int Randomizer(void);
+bool verificar(int num, int numeros[]);
+//void asistencia(int numeros[]);
+
 ////////////////////////////////////
 
 /////////////////////////////////////////
@@ -48,13 +52,9 @@ int main() {
 	/////////////////////////////
 
 	/////////////////////////////
-	//Declaración de variables de estructuras
-
-	////////////////////////////
-
-	/////////////////////////////
 	//Declaración de variables locales
-
+	int num = 0, numeros[15];
+	unsigned short int pos = 0;
 	////////////////////////////
 
 	////////////////////////////
@@ -79,13 +79,115 @@ int main() {
 
 	//////////////////////////////
 	//Cuerpo del programa
+	//Código de randomizer
+	cout << "Un momento, se est n generando los alumnos de forma aleatorea, por favor espere un momento" << endl << endl;
+	for (int i = 0; i < 15; i++) {
+		//inicia la estructura repetitiva for
+		while (verificar(num, numeros)) {
+			//inicia la estructura repetitiva while que llama a la función verificar con dichos argumentos
+#ifdef _WIN32
+			Sleep(2000);
+#else
+			sleep(2000);
+#endif
+			num = 1 + rand() % 31;
+			//genera un número aleatoreo entre el 1 y el 31 y lo guarda en la variable de tipo entera llamada num
+		}
+		//termina la estrucutra repetitiva while
+		numeros[i] = num;
+		//asigna el valor de num a el espacio correspondiente del arreglo según el valor de i
+	}
+	//termina la estructura repetitiva for
+	num = 0;
+	//Le asigna el valor 0 a la variable num
 
-	//////////////////////////////
 
-	//////////////////////////////
-	//parte final del código
-	cout << "Esta es la parte fianl del programa" << endl;
-	cout << "Que la fuerza de velocidad te acompa¤e" << endl << endl;
+	//código de asistencia
+	for (int i = 0; i < 15; i++) {
+		/*
+		Inicia la estructura repetitiva for que se encarga de recorrer la posición actual del arreglo numeros
+		*/
+		int pos = numeros[i];
+		switch (numeros[i]) {
+		case 1: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 2: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 3: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 4: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 5: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 6: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 7: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 8: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 9: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 10: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 11: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 12: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 13: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 14: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 15: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 16: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 17: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 18: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 19: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 20: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 21: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 22: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 23: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 24: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 25: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 26: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 27: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 28: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 29: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 30: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		case 31: cout << "El alumno n£mero: " << pos << " tiene que asistir a clases presenciales" << endl << endl;
+			break;
+		default: cout << "Error alumno no v lido" << endl;
+			break;
+		}
+	}
+
+	/*
+	int* lista = generar_lista_desordenada(principio, fin);
+
+	for (int i = 0; i < fin; i++) {
+		std::cout << lista[i] << " ";
+	}
+	std::cout << std::endl;
+*/
+//////////////////////////////
+
+//////////////////////////////
+//parte final del código	
 #ifdef _WIN32
 	system("pause");
 #else
@@ -99,7 +201,129 @@ int main() {
 
 //////////////////////////////////////////
 //definición de funciones
+/*
+int Randomizer(){
+	//Función que se encarga de generar los números de lista de los alumnos de forma aleatoria
+	int num=0,numeros[15];
+	for(int i=0;i<15;i++){
+	//inicia la estructura repetitiva for
+		while(verificar(num,numeros)==false){
+		//inicia la estructura repetitiva while que llama a la función verificar con dichos argumentos
+			num=1+rand()%31;
+			//genera un número aleatoreo entre el 1 y el 31 y lo guarda en la variable de tipo entera llamada num
+		}
+		//termina la estrucutra repetitiva while
+		numeros[i]=num;
+		//asigna el valor de num a el espacio correspondiente del arreglo según el valor de i
+	}
+	//termina la estructura repetitiva for
+	num=0;
+	//Le asigna el valor 0 a la variable num
+	//return numeros;
+	asistencia(numeros);
+}
+*/
+bool verificar(int num, int numeros[]) {
+	//función que se encarga de verificar si ya existe el número
+	for (int i = 0; i < 15; i++) {
+		/*
+		Inicia la estructura repetitiva for que se encarga de aumentar el valor de i, la cual se usa
+		para recorrer la posición actual del arreglo
+		*/
+		if (num == numeros[i]) {
+			/*
+			Inicia la estructura comparativa if que compara si num es es igual a el valor que tenga el
+			arreglo en la posición actual
+			*/
+			return true;
+			//si el número ya existe en el arreglo se retorna un booleano "True"
+		}
 
+		//Termina la estructura comparativa
+
+	}
+	return false;
+	//se retornará "false en cado que el número no se encuentre en el arreglo, en ese caso es por que no se repite
+}
+/*
+void asistencia(int numeros[]){
+	/*
+	Función que se encarga de mostrar que alumno tiene que asistir a clases
+
+	for(int i=0;i<15;i++){
+		/*
+		Inicia la estructura repetitiva for que se encarga de recorrer la posición actual del arreglo numeros
+
+		int pos=numeros[i];
+		switch(numeros[i]){
+			case 1: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 2: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 3: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+			break;
+			case 4: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 5: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 6: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 7: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 8: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 9: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 10: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 11: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 12: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 13: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 14: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 15: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 16: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 17: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 18: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 19: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 20: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 21: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 22: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 23: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 24: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 25: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 26: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 27: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 28: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 29: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 30: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			case 31: cout<<"El alumno n£mero: "<<pos<<" tiene que asistir a clases presenciales"<<endl<<endl;
+				break;
+			default: cout<<"Error alumno no v lido"<<endl;
+				break;
+		}
+	}
+}
+*/
 /////////////////////////////////////////
 
 ////////////////////////////////
