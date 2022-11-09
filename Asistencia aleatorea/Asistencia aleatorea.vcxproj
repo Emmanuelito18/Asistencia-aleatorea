@@ -127,13 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Alumno.h" />
     <ClInclude Include="Asistencia aleatorea.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Persona.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Alumno.cpp" />
     <ClCompile Include="Asistencia aleatorea.cpp" />
+    <ClCompile Include="Persona.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Asistencia aleatorea.rc" />

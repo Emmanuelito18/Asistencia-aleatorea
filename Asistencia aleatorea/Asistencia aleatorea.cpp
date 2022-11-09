@@ -3,6 +3,8 @@
 
 #include "framework.h"
 #include "Asistencia aleatorea.h"
+#include "Persona.h"
+#include "Alumno.h"
 
 #define MAX_LOADSTRING 100
 
