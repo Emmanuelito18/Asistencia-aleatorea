@@ -11,7 +11,7 @@ Persona::Persona(string aPaterno,string aMaterno, string _nombre) {
 Persona::~Persona() {
 
 }
-
-virtual void Persona::mostrarInfo() {
+ 
+/*virtual*/ void Persona::mostrarInfo() {
 
 }

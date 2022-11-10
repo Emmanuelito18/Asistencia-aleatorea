@@ -11,7 +11,7 @@ class Alumno :public Persona{
 	public://Métodos
 		Alumno(string,string,string,string,int);//Constructor
 		~Alumno();//Destructor
-		void mostrarInfo();
+		//void mostrarInfo();
 
 };
 

@@ -11,6 +11,6 @@ class Persona{
 	public://Métodos
 		Persona(string,string,string);//Constructor
 		~Persona();//Destructor
-		virtual void mostrarInfo();
+		/*virtual*/ void mostrarInfo();
 };
 

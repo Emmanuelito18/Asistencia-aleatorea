@@ -10,7 +10,7 @@ Alumno::Alumno(string aPaterno,string aMaterno,string _nombre,string _grupo,int 
 Alumno::~Alumno() {
 
 }
-
-Alumno::mostrarInfo() {
+/*
+void Alumno::mostrarInfo() {
 	Persona::mostrarInfo();
-}
+}*/
