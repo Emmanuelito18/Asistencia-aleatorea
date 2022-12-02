@@ -58,8 +58,4 @@
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.gitattributes" />
-    <None Include="..\.gitignore" />
-  </ItemGroup>
 </Project>
