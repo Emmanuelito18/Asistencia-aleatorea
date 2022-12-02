@@ -6,9 +6,14 @@
 #include "Persona.h"
 #include "Alumno.h"
 
+#define btPrueba 100
+
 #define MAX_LOADSTRING 100
 
-// Variables globales:
+/*Creación de botones*/
+HWND BTN_crearGrupoPrincipal, BTN_mostrarGrupoPrincipal, BTN_editarGrupoPrincipal, BTN_generarAlumnosPrincipal, BTN_salirPrincipal;
+
+// Variables globales:  
 HINSTANCE hInst;                                // instancia actual
 WCHAR szTitle[MAX_LOADSTRING];                  // Texto de la barra de título
 WCHAR szWindowClass[MAX_LOADSTRING];            // nombre de clase de la ventana principal
@@ -67,6 +72,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
+    /*Crea la estrucutra de la clase de la ventana*/
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
@@ -77,7 +83,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hInstance      = hInstance;
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ASISTENCIAALEATOREA));
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
+    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+2);
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_ASISTENCIAALEATOREA);
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
@@ -123,27 +129,99 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - publicar un mensaje de salida y volver
 //
 //
-LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // Analizar las selecciones de menú:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
+    switch (message){
+    case WM_CREATE: {
+        HWND BTN_crearGrupoPrincipal = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Crear grupo",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            10,         // x position 
+            10,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            NULL,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+
+        HWND BTN_editarGrupoPrincipal = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Editar grupo",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            10,         // x position 
+            50,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            NULL,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+
+        HWND BTN_mostrarGrupoPrincipal = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Mostrar grupo",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            10,         // x position 
+            100,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            NULL,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+
+        HWND BTN_generarAlumnosPrincipal = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Generar alumnos",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            10,         // x position 
+            150,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            NULL,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+
+        HWND BTN_salirPrincipal = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Salir",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            10,         // x position 
+            200,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            NULL,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+    }
+    break;
+    case WM_COMMAND:{
+        /*No funcional por el momento*/
+        if (LOWORD(wParam) == btPrueba && HIWORD(wParam) == BN_CLICKED) {
+            MessageBox(NULL, L"Botones", L"Se preciono el boton de prueba", MB_ICONINFORMATION | MB_OK);
         }
-        break;
+        
+        int wmId = LOWORD(wParam);
+        // Analizar las selecciones de menú:
+        switch (wmId)
+        {
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+            /*Invoca a la ventana de acerca de*/
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+        
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+        
+    }
+    break;
     case WM_PAINT:
         {
             PAINTSTRUCT ps;

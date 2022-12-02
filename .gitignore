@@ -8,7 +8,12 @@
 *.suo
 *.user
 *.userosscache
+*Debug
+*x64
 
+#Archivos dentro de la carpeta Asistencia aleatorea
+*x64
+*Debug
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
