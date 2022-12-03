@@ -6,7 +6,13 @@
 #include "Persona.h"
 #include "Alumno.h"
 
+/*Definición de botones*/
 #define btPrueba 100
+#define btCrearPrincipal 101
+#define btEditarPrincipal 102
+#define btMostrarPrincipal 103
+#define btGenerarPrincipal 1004
+#define btSalirPrincipal 105
 
 #define MAX_LOADSTRING 100
 
@@ -135,52 +141,52 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_crearGrupoPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Crear grupo",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
             10,         // x position 
             10,         // y position 
             150,        // Button width
             25,        // Button height
             hWnd,     // Parent window
-            NULL,       // No menu.
+            (HMENU)btCrearPrincipal,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
 
         HWND BTN_editarGrupoPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Editar grupo",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
             10,         // x position 
             50,         // y position 
             150,        // Button width
             25,        // Button height
             hWnd,     // Parent window
-            NULL,       // No menu.
+            (HMENU)btEditarPrincipal,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
 
         HWND BTN_mostrarGrupoPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Mostrar grupo",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
             10,         // x position 
             100,         // y position 
             150,        // Button width
             25,        // Button height
             hWnd,     // Parent window
-            NULL,       // No menu.
+            (HMENU)btMostrarPrincipal,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
 
         HWND BTN_generarAlumnosPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Generar alumnos",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD|BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
             10,         // x position 
             150,         // y position 
             150,        // Button width
             25,        // Button height
             hWnd,     // Parent window
-            NULL,       // No menu.
+            (HMENU)btGenerarPrincipal,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
 
@@ -193,15 +199,41 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
             150,        // Button width
             25,        // Button height
             hWnd,     // Parent window
-            NULL,       // No menu.
+            (HMENU)btSalirPrincipal,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
+
+        HWND BTN_Prueba = CreateWindow(
+            L"BUTTON",  // Predefined class; Unicode assumed 
+            L"Boton de prueba",      // Button text 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            200,         // x position 
+            100,         // y position 
+            150,        // Button width
+            25,        // Button height
+            hWnd,     // Parent window
+            (HMENU)btPrueba,       // No menu.
+            (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
+            NULL);      // Pointer not needed.
+
     }
     break;
     case WM_COMMAND:{
         /*No funcional por el momento*/
         if (LOWORD(wParam) == btPrueba && HIWORD(wParam) == BN_CLICKED) {
-            MessageBox(NULL, L"Botones", L"Se preciono el boton de prueba", MB_ICONINFORMATION | MB_OK);
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }
+        else if (LOWORD(wParam) == btCrearPrincipal && HIWORD(wParam) == BN_CLICKED) {
+            MessageBox(NULL, L"Se preciono el boton para crear un grupo", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }
+        else if (LOWORD(wParam) == btEditarPrincipal && HIWORD(wParam) == BN_CLICKED) {
+            MessageBox(NULL, L"Se preciono el boton para editar un grupo", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }
+        else if (LOWORD(wParam) == btMostrarPrincipal && HIWORD(wParam) == BN_CLICKED) {
+            MessageBox(NULL, L"Se preciono el boton para mostrar un grupo", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }
+        else if (LOWORD(wParam) == btGenerarPrincipal && HIWORD(wParam) == BN_CLICKED) {
+            MessageBox(NULL, L"Se preciono el boton para generar de forma aleatoria la sistencia de un grupo", L"Botones", MB_ICONINFORMATION | MB_OK);
         }
         
         int wmId = LOWORD(wParam);
