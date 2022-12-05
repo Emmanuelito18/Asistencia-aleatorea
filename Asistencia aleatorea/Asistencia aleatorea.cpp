@@ -12,7 +12,7 @@
 #define btEditarPrincipal 102
 #define btMostrarPrincipal 103
 #define btGenerarPrincipal 1004
-#define btSalirPrincipal 105
+#define btSalirPrincipal 1005
 
 #define MAX_LOADSTRING 100
 
@@ -23,10 +23,6 @@ HWND BTN_crearGrupoPrincipal, BTN_mostrarGrupoPrincipal, BTN_editarGrupoPrincipa
 HINSTANCE hInst;                                // instancia actual
 WCHAR szTitle[MAX_LOADSTRING];                  // Texto de la barra de título
 WCHAR szWindowClass[MAX_LOADSTRING];            // nombre de clase de la ventana principal
-
-WCHAR tamanoTitulo[MAX_LOADSTRING];                  // Texto de la barra de título
-WCHAR tamanoClaseVentana[MAX_LOADSTRING];            // nombre de clase de la ventana principal
-
 
 // Declaraciones de funciones adelantadas incluidas en este módulo de código:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -159,7 +155,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_editarGrupoPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Editar grupo",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  // Styles 
             200,         // x position 
             225,         // y position 
             150,        // Button width
@@ -172,7 +168,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_mostrarGrupoPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Mostrar grupo",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  // Styles 
             390,         // x position 
             225,         // y position 
             150,        // Button width
@@ -185,7 +181,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_generarAlumnosPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Generar alumnos",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  // Styles 
             560,         // x position 
             185,         // y position 
             150,        // Button width
@@ -198,7 +194,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_salirPrincipal = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Salir",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  // Styles 
             295,         // x position 
             290,         // y position 
             150,        // Button width
@@ -211,7 +207,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         HWND BTN_Prueba = CreateWindow(
             L"BUTTON",  // Predefined class; Unicode assumed 
             L"Boton de prueba",      // Button text 
-            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+            WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  // Styles 
             200,         // x position 
             100,         // y position 
             150,        // Button width
@@ -220,11 +216,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
             (HMENU)btPrueba,       // No menu.
             (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
             NULL);      // Pointer not needed.
-
     }
     break;
     case WM_COMMAND:{
-        
+        /*
         if (LOWORD(wParam) == btPrueba && HIWORD(wParam) == BN_CLICKED) {
             MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
         }
@@ -239,7 +234,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         }
         else if (LOWORD(wParam) == btGenerarPrincipal && HIWORD(wParam) == BN_CLICKED) {
             MessageBox(NULL, L"Se preciono el boton para generar de forma aleatoria la sistencia de un grupo", L"Botones", MB_ICONINFORMATION | MB_OK);
-        }
+        }*/
         int wmId = LOWORD(wParam);
         // Analizar las selecciones de menú:
         switch (wmId)
@@ -251,7 +246,29 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
-        
+            
+            /*Comportamiento de lso botones*/
+        case btPrueba: {
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }break;
+        case btCrearPrincipal: {
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }break;
+        case btEditarPrincipal: {
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }break;
+        case btGenerarPrincipal: {
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }break;
+        case btMostrarPrincipal: {
+            MessageBox(NULL, L"Se preciono el boton de prueba", L"Botones", MB_ICONINFORMATION | MB_OK);
+        }break;
+        case btSalirPrincipal: {
+            if (MessageBox(hWnd, L"¿Estas seguro que quieres salir?", L"Salir", MB_OKCANCEL|MB_DEFBUTTON1) == IDOK) {
+                SendMessage(hWnd, WM_DESTROY, 0, 0);
+            }
+        }break;
+
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
