@@ -11,3 +11,7 @@ De momento este proyecto no está pensado para distribución, ni mucho menos par
 Se aceptan sugerencias de funciones, y ayudas acerca del código, pero para ello tendrán que contactarme por discord como Emmanuelito18#9559.
 
 Este proyecto es totalmene en español, y futuramente quizá se tradusca a otros idiomas.
+
+<h1>Diferentes versiones de <b>Asistencia aleatorea</b></h1>
+<h2><a href="https://github.com/Emmanuelito18/Asistencia-aleatoria-java">Version de java (work in progress)</a></h2>
+<h2><a href="https://github.com/Emmanuelito18/WebAsistencia-alatorea">Version de java Web (work in progress)</a></h2>
